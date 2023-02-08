@@ -1,0 +1,36 @@
+--- # questions database
+- |
+    What is the result of this Python code?
+    ```python
+    (lambda x: x())(lambda : print("Hello"))
+    ```
+- |
+    Is this legal C++
+    ```cpp
+    int a = 3.1
+    ```
+- "Is there a practical reason to use C over C++"
+- |
+    What is the result of this Python code?
+    ```python
+    x = [0]
+    y = x
+    y[0] = 99
+    print(x[0])
+    ```
+- "Machine learning just deprecated voice actors, artists and writers in a span of a couple of months, who's next?"
+- "What gives you more cool guy points?"
+- |
+    What is the result of this C++ code?
+    ```cpp
+    auto x = vector<int>{ 1, 2 }
+    x.erase( x.begin() )
+    cout << x[0]
+    ```
+- |
+    What is the result of this Python code?
+    ```python
+    while ((x := x+1) if not x is None else (x := 0)) < 10: print(x)
+    ```
+- "what is a class decorator?"
+- "what does `yield` do in python?"
