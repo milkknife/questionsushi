@@ -29,10 +29,20 @@ async def ping(ctx):
 @bot.event
 async def on_ready():
     AskQuestion.start()
+    GetMessage.start()
 
-@tasks.loop(seconds=30)
+msg_db = []
+@tasks.loop(seconds=5)
+async def GetMessage():
+    channel = bot.get_channel(int(environ['QS_CHANNEL']))
+    message_id = channel.last_message_id
+    if not channel.last_message_id == message_id:
+        msg_db.append(message_id)
+        print(message_id)
+
+@tasks.loop(seconds=60*5)
 async def AskQuestion():
-    channel = bot.get_channel(environ['QS_CHANNEL'])
+    channel = bot.get_channel(int(environ['QS_CHANNEL']))
     await channel.send(choices(qdb)[0])
 
 # todo: add choosable answers
